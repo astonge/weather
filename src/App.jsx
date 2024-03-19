@@ -42,16 +42,14 @@ function App() {
 
   return (
     <>
-    <div className="h-screen">
+    <div className="h-auto">
       <Header 
         location={location}
       />
 
       <div className="bg-base-100 w-full p-4 rounded-b-xl">
-        <div className="grid grid-cols-4 gap-4">
-          <div>
-            <Todays day={today}/>
-          </div>
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-4 ">
+          <div><Todays day={today}/></div>
           <div><Forecast day={tomorrow} title="Tomorrow"/></div>
           <div><Forecast day={nextday} title="Day after"/></div>
         </div>
