@@ -5,7 +5,7 @@ import Forecast from './compoents/Forecast'
 import { useEffect, useState } from "react"
 
 function App() {
-    const [location, setLocation] = useState('None')
+    const [location, setLocation] = useState()
     const [today, setToday] = useState({})
     const [tomorrow, setTomorrow] = useState({})
     const [nextday, setNextday] = useState({})
