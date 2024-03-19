@@ -47,7 +47,7 @@ function App() {
         location={location}
       />
 
-      <div className="bg-base-100 w-full p-4">
+      <div className="bg-base-100 w-full p-4 rounded-b-xl">
         <div className="grid grid-cols-4 gap-4">
           <div>
             <Todays day={today}/>
