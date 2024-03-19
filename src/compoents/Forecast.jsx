@@ -6,8 +6,8 @@ function Weather(props) {
     let title = props.title ? props.title : "Loading"
     let icon = today?.condition?.icon
     let altText = today?.condition?.text
-    let high = today?.maxtemp_c ? today.maxtemp_c : "0.0"
-    let low = today?.mintemp_c ? today.mintemp_c : "0.0"
+    let high = today?.maxtemp_c
+    let low = today?.mintemp_c
 
     return (
         <>
@@ -24,7 +24,10 @@ function Weather(props) {
                         }
                     </div>
                     <div className="flex justify-center">
-                        <h1 className="text-1xl font-semibold">{high} {'\u00b0'}C / {low} {'\u00b0'}C</h1>
+                        {high && low ?
+                            <h1 className="text-1xl font-semibold">{high} {'\u00b0'}C / {low} {'\u00b0'}C</h1> :
+                            <Loading/>
+                        }
                     </div>
                 </div>
             </div>
