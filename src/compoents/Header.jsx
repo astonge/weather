@@ -9,7 +9,7 @@ function Header(props) {
             <div className="flex-1">
               <a className="btn btn-ghost text-3xl font-bold">Weathr</a>
               {location ?
-                <small className="text-small">{ location }</small> :
+                <small className="text-lg pt-2">{ location }</small> :
                 <Loading/>
               }
             </div>

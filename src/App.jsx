@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './compoents/Header'
-import Todays from './compoents/Todays'
+import TodayStat from './compoents/Todays'
 import Forecast from './compoents/Forecast'
 import { useEffect, useState } from "react"
 
@@ -13,6 +13,7 @@ function App() {
     const getForecastWeather = async(location) => {
       (await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_WEATHERAPI_KEY}&q=${location}&days=3&aqi=no&alerts=no`)).json()
       .then((res) => {
+        console.log(res)
         setToday(res.current)
         setTomorrow(res.forecast.forecastday[1])
         setNextday(res.forecast.forecastday[2])
@@ -48,10 +49,13 @@ function App() {
       />
 
       <div className="bg-base-100 w-full p-4 rounded-b-xl">
-        <div className="grid md:grid-cols-4 grid-cols-1 gap-4 ">
-          <div><Todays day={today}/></div>
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-4 ">
+          <div><Forecast day={today} title="Today"/></div>
           <div><Forecast day={tomorrow} title="Tomorrow"/></div>
           <div><Forecast day={nextday} title="Day after"/></div>
+        </div>
+        <div className="mt-4">
+          <div><TodayStat day={today}/></div>
         </div>
       </div>
     </div>
