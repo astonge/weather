@@ -23,32 +23,39 @@ function Todays(props) {
                 <div className="stats stats-vertical lg:stats-horizontal shadow">
                     <div className="stat">
                         <div className="stat-title">Feels Like</div>
-                        {feelslike_c ? <div className="stat-value">{feelslike_c} {'\u00b0'}C</div> : <Loading/>}
+                        {feelslike_c ? <div className="stat-value">{feelslike_c} {'\u00b0'}C</div> : <div className="flex justify-center"><Loading className/></div>}
                     </div>
                     <div className="stat">
                         <div className="stat-title">Humidity</div>
-                        {humidity? <div className="stat-value">{humidity} {'\u0025'}</div> : <Loading/>}
+                        {humidity? <div className="stat-value">{humidity} {'\u0025'}</div> : <div className="flex justify-center"><Loading className/></div>}
                     </div>
                     
                     <div className="stat">
                         <div className="stat-title">Wind</div>
-                        {wind_dir ? <div className="stat-value">{wind_dir} </div> : <Loading/>}
-                        {wind_kph ? <div className="stat-desc">{wind_kph} kph</div> : <Loading/>}
+                        {wind_dir ? <div className="stat-value">{wind_dir} </div> : <div className="flex justify-center"><Loading className/></div>}
+                        {wind_kph ? <div className="stat-desc">{wind_kph} kph</div> : <div className="flex justify-center"><Loading className/></div>}
                     </div>
                     
                     <div className="stat">
                         <div className="stat-title">Wind Gusts</div>
-                        {gust_kph ? <div className="stat-value">{gust_kph} kph</div> : <Loading/>}
+                        {gust_kph ? <div className="stat-value">{gust_kph} kph</div> : <div className="flex justify-center"><Loading className/></div>}
                     </div>
                     
                     <div className="stat">
                         <div className="stat-title">Visibility</div>
-                        {vis_km ? <div className="stat-value">{vis_km} km</div> : <Loading/>}
+                        {
+                            vis_km ? 
+                            <div className="stat-value">{vis_km} km</div> : 
+                            <div className="flex justify-center"><Loading className/></div>
+                        }
                     </div>
                     
                     <div className="stat">
                         <div className="stat-title">UV Index</div>
-                        {uv_index ? <div className="stat-value">{uv_index}</div> : <Loading/>}
+                        {
+                            uv_index ? <div className="stat-value">{uv_index}</div> : 
+                            <div className="flex justify-center"><Loading className/></div>
+                        }
                     </div>        
                     </div>
                 </div>
